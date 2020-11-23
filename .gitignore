@@ -1,2 +1,5 @@
 node_modules
 Documents
+
+yarn-error.error
+yarn.lock
