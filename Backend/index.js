@@ -3,11 +3,16 @@ const bodyParser = require("body-parser");
 const expressSession = require("express-session");
 const { check, validationResult } = require("express-validator");
 const server = express();
+const routers = require("./routes");
 const PORT = 3000;
+
+const connect = require("./configs/database");
 
 // Setting Parser
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
+
+server.use("/api", routers);
 //setting session
 server.use(
   expressSession({
